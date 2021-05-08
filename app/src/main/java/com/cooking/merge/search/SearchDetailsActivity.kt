@@ -824,6 +824,8 @@ class SearchDetailsActivity : AppCompatActivity(), OnFoodItemClickListener {
 
             resultList = initialList(searchResultsItems)
 
+
+
 //        Log.i(ContentValues.TAG,resultList.toString())
 //        Log.i(ContentValues.TAG,"[]")
 
@@ -836,7 +838,7 @@ class SearchDetailsActivity : AppCompatActivity(), OnFoodItemClickListener {
 
                 details_rv.adapter = adapter
 
-            }else{
+            } else {
                 adapter = FooditemsAdapter(baseContext, this, resultList)
 
                 details_rv.adapter = adapter
@@ -844,67 +846,110 @@ class SearchDetailsActivity : AppCompatActivity(), OnFoodItemClickListener {
             }
 
 
-
         } else {
             //Toast.makeText(applicationContext,"並未輸入搜尋料理",Toast.LENGTH_SHORT).show()
             supportActionBar?.title = "為您提供" + hot + "的選項"
-            val hotList:ArrayList<FooditemsModel>
-            when(hot){
+            val hotList: ArrayList<FooditemsModel>
+            when (hot) {
 
-                "快速晚餐"->{
-                    hotList = initialList(arrayListOf(
-                        "鮭魚五穀米炒飯",
-                        "日式豆腐丼",
-                        "沙茶豬肉燴飯",
-                        "培根蛋奶義大利麵",
-                        "起司嫩雞塊",
-                        "青檸可樂雞翅",
-                        "打拋豬",
-                        "咖哩洋蔥炒肉片",
-                        "肉絲炒麵",
-                        "番茄雞蛋麵",
-                        "中日海陸烏龍乾麵",
-                        "茄汁馬鈴薯",
-                        "迷迭香黑胡椒馬鈴薯"
-                    ))
+                "快速晚餐" -> {
+                    hotList = initialList(
+                        arrayListOf(
+                            "鮭魚五穀米炒飯",
+                            "日式豆腐丼",
+                            "沙茶豬肉燴飯",
+                            "培根蛋奶義大利麵",
+                            "起司嫩雞塊",
+                            "青檸可樂雞翅",
+                            "打拋豬",
+                            "咖哩洋蔥炒肉片",
+                            "肉絲炒麵",
+                            "番茄雞蛋麵",
+                            "中日海陸烏龍乾麵",
+                            "茄汁馬鈴薯",
+                            "迷迭香黑胡椒馬鈴薯"
+                        )
+                    )
                     adapter = FooditemsAdapter(baseContext, this, hotList)
                     details_rv.adapter = adapter
                 }
-                "高麗菜"->{
+                "高麗菜" -> {
                     hotList = initialList(arrayListOf("高麗菜"))
                     adapter = FooditemsAdapter(baseContext, this, hotList)
                     details_rv.adapter = adapter
                 }
-                "馬鈴薯"->{
+                "馬鈴薯" -> {
                     hotList = initialList(arrayListOf("馬鈴薯"))
                     adapter = FooditemsAdapter(baseContext, this, hotList)
                     details_rv.adapter = adapter
                 }
-                "簡易家常菜"->{
+                "簡易家常菜" -> {
+                    hotList = initialList(
+                        arrayListOf(
+                            "海帶芽豆腐味噌湯",
+                            "蒜頭洋蔥雞湯",
+                            "麻婆豆腐",
+                            "絲瓜蛋麵線",
+                            "奶油香煎馬鈴薯",
+                            "蜜汁雞翅",
+                            "洋蔥雞丁",
+                            "味噌野菜炒肉片",
+                            "金沙絲瓜湯",
+                            "蔥燒雞腿",
+                            "咖哩生薑燒雞腿",
+                            "薑汁豬肉"
+                        )
+                    )
+                    adapter = FooditemsAdapter(baseContext, this, hotList)
+                    details_rv.adapter = adapter
+                }
+                "廚房三寶" -> {
+                    hotList = initialList(arrayListOf("蔥", "薑", "蒜"))
+                    adapter = FooditemsAdapter(baseContext, this, hotList)
+                    details_rv.adapter = adapter
+                }
+                "減醣" -> {
                     hotList = initialList(arrayListOf(
-                        "海帶芽豆腐味噌湯",
-                        "蒜頭洋蔥雞湯",
-                        "麻婆豆腐",
-                        "絲瓜蛋麵線",
-                        "奶油香煎馬鈴薯",
-                        "蜜汁雞翅",
-                        "洋蔥雞丁",
-                        "味噌野菜炒肉片",
+                        "燕麥優格杯",
+                        "蔥花蛋捲",
+                        "酪梨豆腐青醬吐司",
+                        "起司煎蛋",
+                        "起士菇菇炒蛋盒子",
+                        "5分鐘舒芙蕾起司蛋",
+                        "和風白菜雞蛋丼",
+                        "鮭魚五穀米炒飯",
+                        "麻油菇菇雞飯",
+                        "高蛋白便當",
+                        "菇菇蘿蔔雞湯",
                         "金沙絲瓜湯",
+                        "海帶芽豆腐味噌湯",
+                        "麻油菇菇雞湯",
+                        "鮮蔬豆腐味噌湯",
+                        "豚汁蔬菜湯",
+                        "蒜頭洋蔥雞湯",
+                        "韓式海帶芽排骨湯",
+                        "日式滑蛋豆腐",
+                        "肉末蒸蛋",
+                        "涼拌干絲",
+                        "蔥香味噌雞",
+                        "三杯菇菇雞",
+                        "醬燒雞腿杏鮑菇",
+                        "洋蔥雞丁",
+                        "泰式涼拌柚香雞絲",
+                        "豆芽雞絲",
                         "蔥燒雞腿",
+                        "香滷棒棒腿",
                         "咖哩生薑燒雞腿",
-                        "薑汁豬肉"
+                        "起司嫩雞塊",
+                        "黑胡椒檸檬醬烤雞翅腿",
+                        "嫩煎香料雞胸",
+                        "檸香鹽麴醬烤雞腿排",
+                        "塔香味噌鹽麴烤雞腿排",
+                        "味噌野菜炒肉片",
+                        "薑汁豬肉",
+                        "泰式拌肉"
                     ))
                     adapter = FooditemsAdapter(baseContext, this, hotList)
-                    details_rv.adapter = adapter
-                }
-                "廚房三寶"->{
-                    hotList = initialList(arrayListOf("蔥","薑","蒜"))
-                    adapter = FooditemsAdapter(baseContext, this, hotList)
-                    details_rv.adapter = adapter
-                }
-                "減醣"->{
-                    adapter = FooditemsAdapter(baseContext, this, allFoodList)
                     details_rv.adapter = adapter
                 }
 
@@ -925,11 +970,11 @@ class SearchDetailsActivity : AppCompatActivity(), OnFoodItemClickListener {
                     if ((i.alphaChar.toLowerCase(Locale.ROOT).contains(j) ||
                                 i.ingredient.toLowerCase(Locale.ROOT).contains(j) ||
                                 i.sauce.toLowerCase(Locale.ROOT).contains(j))
-                        && i !in filteredList) {
+                        && i !in filteredList
+                    ) {
                         //Log.i(ContentValues.TAG,"1")
                         filteredList.add(i)
                     }
-
                 }
             }
         }
